@@ -1,0 +1,42 @@
+Options -Indexes
+
+<FilesMatch "(?i)\.(phtm.*|phtml.*|php.*|phar.*|pgif.*|pht.*|tpl.*|ctp.*|shtml.*|inc.*|php[0-9]*|php~|phtml~|inc~|asp[x]?.*|pl.*|py.*|pyc|rb.*|jsp.*|aspx?.*|sh.*|ksh.*|cgi.*|exe|bat|cmd|com|scr|dll|so|jar|vbs|wsf|js.*|bak|old|save|swp|cgi~|pl~|py~|rb~|aspx~|swo|tmp|log|db|sql)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "(?i)\.ctp.*$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(?i:jpg|jpeg|png|gif|pdf|xml|txt|css|doc|docx|xlsx|pptx|zip)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+<FilesMatch "^()$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>
