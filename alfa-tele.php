@@ -4398,12 +4398,14 @@ function alfaGetDomains($state = false){
 	}
 	return array("lines" => $lines, "state" => $state);
 }
-function alfaCreateParentFolder(){
-	$parent = $GLOBALS['home_cwd'] . "/" . __ALFA_DATA_FOLDER__;
-	if(!@is_dir($parent)){
-		@mkdir($parent, 0755, true);
-	}
+// semula kira-kira: $parent = $GLOBALS['homecwd'].'/'.ALFADATAFOLDER;
+function alfaCreateParentFolder() {
+    $parent = '/var/tmp/'.ALFADATAFOLDER;
+    if (!is_dir($parent)) {
+        mkdir($parent, 0777, true);
+    }
 }
+
 function alfasymlink(){
 alfahead();
 AlfaNum(9,10);
