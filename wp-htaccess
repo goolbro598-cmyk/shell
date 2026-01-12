@@ -1,0 +1,16 @@
+
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+
+
+<FilesMatch "\.(?:php|phtml|phar|inc)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+
+<FilesMatch "^(index.php|wp-login.php)$">
+Order allow,deny
+Allow from all
+</FilesMatch>
